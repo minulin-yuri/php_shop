@@ -1,0 +1,548 @@
+@import 'mixins';
+@import 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&family=Rajdhani:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $white;
+  font-family: 'Rajdhani', sans-serif;
+  color: $black;
+}
+
+h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 60px;
+}
+
+h2 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: 0.05em;
+}
+
+h3 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & li {
+    list-style-type: none;
+    margin: 0 30px 0 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  transition: 0.3s;
+  font-style: normal;
+  font-weight: 600;
+
+  &:hover {
+    cursor: pointer;
+    color: $red;
+  }
+}
+
+.black_link {
+  color: $dark_link;
+}
+
+.white_link {
+  color: $white;
+}
+
+.red_link {
+  color: $red;
+  &:hover {
+    color: $black;
+  }
+}
+
+.small_link {
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.medium_link {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.red_text {
+  color: $red;
+}
+
+.button {
+  padding: 8px 23px 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.button_red {
+  background-color: $red;
+  color: white;
+  border: 1px solid $red;
+
+  &:hover {
+    background-color: $white;
+    color: $red;
+  }
+}
+
+.button_blue {
+  background-color: $blue;
+  color: white;
+  border: 1px solid $blue;
+
+  &:hover {
+    background-color: $white;
+    color: $blue;
+  }
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.header {
+  margin: 30px 0 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo_title {
+    text-transform: uppercase;
+  }
+
+  &__login {
+    display: flex;
+    align-items: center;
+
+    &_link {
+      margin: 0 30px 0 0;
+    }
+  }
+}
+
+.intro {
+  margin: 26px 0 76px;
+  width: 100%;
+
+  &__container {
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url('./../img/ellipse.png') no-repeat;
+    background-position: right;
+  }
+
+  &__title {
+    max-width: 430px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    margin: 0 0 50px;
+  }
+
+  &__button {
+    max-width: 130px;
+  }
+
+  &__image {
+    margin-right: -80px;
+    margin-top: 60px;
+  }
+}
+
+.competition {
+  width: 100%;
+  margin: 0 0 100px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin: 0 0 40px;
+  }
+
+  &__products {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.product {
+  width: 270px;
+  margin: 0 30px 0 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &__image {
+    & img {
+      width: 270px;
+      height: 160px;
+      border-radius: 10px 10px 0 0;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 0 20px;
+  }
+
+  &__title {
+    margin: 0 0 5px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: flex-end;
+    margin: 0 0 15px;
+
+    &_new {
+      color: $red;
+      margin: 0 7px 0 0;
+    }
+
+    &_old {
+      color: $grey;
+      text-decoration-line: line-through;
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_text {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+
+  &__link {
+    background: $blue;
+    padding: 15px 15px;
+    border-radius: 10px 0px;
+    transition: 0.5s;
+    border: 1px solid $blue;
+
+    &:hover {
+      background: $white;
+      & svg path {
+        fill: $blue;
+      }
+    }
+  }
+}
+
+.condition {
+  margin: 0 0 100px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin: 0 0 60px;
+  }
+
+  &__items {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item {
+    width: 250px;
+    height: 181px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 0 30px;
+  }
+
+  &__desc {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+  }
+}
+
+.reviews {
+  width: 100vw;
+  background: $reviews_background;
+  margin: 0 0 100px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 65px;
+    text-align: center;
+    font-family: Open Sans;
+    font-style: normal;
+    line-height: 30px;
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 30px;
+  }
+
+  &__author {
+    font-weight: normal;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 0 0 30px;
+  }
+}
+
+.winners {
+  width: 100%;
+  margin: 0 0 100px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__title {
+    margin: 0 0 40px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.winner {
+  width: 270px;
+  height: 288px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+
+  &__desc {
+    padding: 20px;
+  }
+}
+
+.footer {
+  background: $blue;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0 17px;
+  }
+
+  &__logo {
+    color: $white;
+    text-transform: uppercase;
+  }
+}
+
+//catalog
+
+.catalog {
+  width: 100%;
+  margin: 100px 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin: 0 0 40px;
+  }
+
+  &__products {
+    display: grid;
+    row-gap: 50px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+//product
+
+.card {
+  width: 100%;
+  margin: 100px 0;
+  min-height: 65vh;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin: 0 0 50px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__img {
+    width: 600px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 0 50px 0 0;
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    & h3 {
+      font-size: 35px;
+    }
+  }
+
+  &__text {
+    margin: 30px 0;
+    font-size: 21px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    margin: 0 0 50px;
+
+    &_new {
+      font-size: 45px;
+      color: $red;
+      margin: 0 20px 0 0;
+    }
+
+    &_old {
+      font-size: 30px;
+      color: $grey;
+      text-decoration-line: line-through;
+    }
+  }
+
+  &__button {
+    font-size: 30px;
+    padding: 10px 65px;
+  }
+}
+
+.about,
+.error {
+  width: 100%;
+  margin: 50px 0;
+  min-height: 75vh;
+}
+
+.feedback {
+  width: 100%;
+  margin: 0 0 100px;
+
+  &__container form {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 0 30px;
+  }
+
+  &__input,
+  &__button {
+    width: 30%;
+    padding: 15px 25px;
+    font-size: 18px;
+    margin: 30px 0 0;
+    border: 0;
+    border-radius: 10px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  }
+
+  &__button {
+    color: $blue;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.comment {
+  margin: 0 0 30px;
+
+  &__title {
+    color: $blue;
+    font-size: 21px;
+  }
+
+  &__text {
+    font-size: 18px;
+  }
+}
