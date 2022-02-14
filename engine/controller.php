@@ -3,6 +3,9 @@ function router($page, $action = "") {
 
 $params = [];
 
+$params['user'] = get_user();
+$params['auth'] = is_auth();
+
 switch ($page) {
     case 'index':
         $params['title'] = 'Главная';
@@ -34,28 +37,30 @@ switch ($page) {
             }
         break;
 
-    // case 'gallery':
-    //     $params['title'] = 'Галерея';
-    //     $params['message'] = 'ok';
-    //     $params['images'] = getImagesList();
-    //     break;
-    
-    // case 'view_image':
-    //     $id = (int)$_GET['id'];
-    //     $image = getSingleImage($id);
-    //     if ($image) {
-    //         $params['title'] = $image['name'];
-    //         $params['image'] = $image;
-    //         $params['action'] = 'none';
-    //     } else {
-    //         header("Location: /?page=error");
-    //         die();
-    //     }
-    //     break;
+    case 'basket':
+        $params['title'] = 'Корзина';
+        break;
 
-    // case 'apicatalog':
-    //     echo json_encode(getCatalog(), JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-    //     die();
+    case 'login':
+        $login = $_POST['login'];
+        $pass = $_POST['pass'];
+          
+        if (auth($login, $pass)) {
+            if (isset($_POST['save'])) {
+                $hash = uniqid(rand(), true);
+                $db = getDb();
+                $id = mysqli_real_escape_string($db, strip_tags(stripslashes($_SESSION['id'])));
+                $sql = "UPDATE `users` SET `hash` = '{$hash}' WHERE `users`.`id` = {$id}";
+                $result = mysqli_query($db, $sql);
+                setcookie("hash", $hash, time() + 3600);
+                
+            }
+            header("Location: /");
+            die();
+        } else {
+            die('Неверный логин или пароль');
+        }
+        break;
         
     default: 
         $page = 'error';

@@ -14,6 +14,7 @@ require "../engine/db.php";
 require "../engine/render.php";
 // require "../models/upload.php";
 require "../models/catalog.php";
+require "../models/auth.php";
 require "../models/feedback.php";
 require "../models/links.php";
 // require "../models/files.php";
