@@ -24,9 +24,8 @@ switch ($page) {
         break;
 
     case 'card':
-            $id = (int)$_GET['id'];
-            $product = getSingleProduct(14);
-            $comments = getComments(14);
+            $product = getSingleProduct($action);
+            $comments = getComments($action);
             if ($product) {
                 $params['title'] = $product['name'];
                 $params['product'] = $product;
@@ -36,6 +35,9 @@ switch ($page) {
                 die();
             }
         break;
+
+    case 'feedback':
+        doCommentAction($action);
 
     case 'basket':
         $params['title'] = 'Корзина';
@@ -61,6 +63,18 @@ switch ($page) {
             die('Неверный логин или пароль');
         }
         break;
+
+    case 'calculate': 
+        $params['title'] = 'Калькулятор';
+        if ($_POST) {
+            $num1 = (int)$_POST['num1'];
+            $num2 = (int)$_POST['num2'];
+            $math = $_POST['math'];
+            $params['message'] = math($num1, $num2, $math);
+            $params['num1'] = $_POST['num1'];
+            $params['num2'] = $_POST['num2'];
+            $params['math'] = $_POST['math'];
+        }
         
     default: 
         $page = 'error';

@@ -15,20 +15,4 @@
     </div>
   </div>
 </section>
-<section class="feedback">
-  <div class="container feedback__container">
-    <hr>
-    <form action="" method="POST">
-      <input class="feedback__input" type="text" name="name" placeholder="Напишите свое имя">
-      <input class="feedback__input" type="text" name="comment" placeholder="Напишите свой комментарий">
-      <input class="feedback__button" type="submit" value="Отправить">
-    </form>
-    <?php foreach ($comments as $comment): ?>
-    <div class="comment">
-      <h3 class="comment__title"><?=$comment['author']?></h3>
-      <span><?=$comment['created_at']?></span>
-      <p class="comment__text"><?=$comment['comment']?></p>
-    </div>
-    <?php endforeach;?>
-  </div>
-</section>
+<?php include "feedback.php" ?>

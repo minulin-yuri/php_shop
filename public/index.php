@@ -22,4 +22,8 @@ if ($url_array[1] == "") {
 $params = router($page, $action);
 $params['links'] = $links;
 
+if ($page == 'calculate') {
+    $params['mathOperations'] = $operations;
+}
+
 echo render($page, $params);

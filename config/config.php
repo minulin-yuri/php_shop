@@ -1,7 +1,7 @@
 <?php
 define('TEMPLATES_DIR', '../templates/');
 define('LAYOUTS_DIR', 'layouts/');
-define('PRODUCTS_IMG_DIR', 'product_img/');
+define('PRODUCTS_IMG_DIR', '/product_img/');
 define('IMG_DIR', 'img/');
 
 /* DB config */
@@ -13,6 +13,7 @@ define('DB', 'basic_php');
 require "../engine/db.php";
 require "../engine/render.php";
 // require "../models/upload.php";
+require "../models/calculate.php";
 require "../models/catalog.php";
 require "../models/auth.php";
 require "../models/feedback.php";

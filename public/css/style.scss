@@ -62,6 +62,17 @@ a {
   }
 }
 
+input,
+select {
+  padding: 15px 25px;
+  font-size: 18px;
+  margin: 30px 0 0;
+  border: 0;
+  border-radius: 10px;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  font-size: 18px;
+}
+
 .black_link {
   color: $dark_link;
 }
@@ -189,7 +200,6 @@ a {
     margin: 0 auto;
   }
 
-  &__input,
   &__button {
     width: 30%;
     padding: 5px 25px;
@@ -581,7 +591,8 @@ a {
 
 .about,
 .error,
-.basket {
+.basket,
+.calculate {
   width: 100%;
   margin: 100px 0;
   min-height: 75vh;
@@ -619,6 +630,30 @@ a {
 
 .comment {
   margin: 0 0 30px;
+  width: 100%;
+  
+  &__visible {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    &:hover {
+      background: $light_grey;
+      border-radius: 10px;
+    }
+
+  }
+
+  &__unvisible {
+    display: none;
+    background: $light_grey;
+    padding: 5px 20px;
+    border-radius: 10px;
+  }
+
+  &__content {
+    padding: 5px 20px;
+  }
 
   &__title {
     color: $blue;
@@ -627,6 +662,17 @@ a {
 
   &__text {
     font-size: 18px;
+  }
+
+  &__links {
+    width: 7%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px 0 0;
+
+    & a svg {
+      width: 25px;
+    }
   }
 }
 
